@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WikiViewer</title>
+    <!--JQuery CDN-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!--Bootstrap CDN-->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--My javascript-->
+	<script src="wikiScript.js"></script>
+</head>
+<body> 
+<div class="container-fluid text-center">
+	<h1>WikiViewer</h1>
+	<input id="searchBox" type="text" placeholder="Search Box" onkeydown="if (event.keyCode == 13) document.getElementById('btnSearch').click()">
+	<input id="btnSearch" type="button" onclick="searchQuery()" value="Enter">
+	<div id=content></div>
+</div>
+</body>
+</html>
