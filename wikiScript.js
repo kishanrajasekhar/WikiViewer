@@ -1,12 +1,15 @@
 // api information from https://www.mediawiki.org/wiki/API:Search
+
 var base_url = "https://en.wikipedia.org/w/api.php?action=query&list=search&&utf8=&format=json&callback=?&srsearch=";
+//var base_redirect = "https://en.wikipedia.org/?";
 var base_redirect = "https://en.wikipedia.org/wiki/";
 
+//
 function searchQuery(){
 	// clear the previous search results
 	$("#content").html("");
 	// get the query from the search box
-	var query = $("#searchBox").val();
+	var query = $("#searchBox").val().replace(" ", "%20");
 	displaySearchResults(query);
 }
 
@@ -17,7 +20,9 @@ function displaySearchResults(query){
 	$.getJSON(wiki_url, function(json){
 		var result = json["query"]["search"];
 		for(var i=0; i<result.length; i++){
-			$("#content").append("<h3>" + result[i].title + "</h3><br>");
+			console.log(result[i]);
+			url_link = base_redirect + result[i].title.replace(" ", "%20");
+			$("#content").append("<h3> <a href='" + url_link + "' target='_blank'>" + result[i].title + "</a></h3><br>");
 			$("#content").append(result[i].snippet  + "<br>");
 		}
 	});
