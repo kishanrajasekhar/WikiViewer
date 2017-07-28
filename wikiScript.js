@@ -11,6 +11,8 @@ function searchQuery(){
 	// get the query from the search box
 	var query = $("#searchBox").val().replace(" ", "%20");
 	displaySearchResults(query);
+	// clear search box for next query
+	$("#searchBox").val("");
 }
 
 function displaySearchResults(query){
@@ -22,10 +24,11 @@ function displaySearchResults(query){
 		for(var i=0; i<result.length; i++){
 			console.log(result[i]);
 			url_link = base_redirect + result[i].title.replace(" ", "%20");
-			$("#content").append("<h3> <a href='" + url_link + "' target='_blank'>" + result[i].title + "</a></h3><br>");
-			$("#content").append(result[i].snippet  + "<br>");
+			$("#content").append("<a href='" + url_link + "' class='list-group-item' target='_blank'><h3>"
+			+ result[i].title + "</h3><br>" + result[i].snippet  + "<br></a>");
 		}
 	});
+	
 }
 
 function test(){	

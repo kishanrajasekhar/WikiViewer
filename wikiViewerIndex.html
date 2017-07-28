@@ -11,11 +11,20 @@
 	<script src="wikiScript.js"></script>
 </head>
 <body> 
+<style>
+	body{
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	#btnSearch{
+		margin-bottom: 2%;
+	}
+</style>
 <div class="container-fluid text-center">
 	<h1>WikiViewer</h1>
 	<input id="searchBox" type="text" placeholder="Search Box" onkeydown="if (event.keyCode == 13) document.getElementById('btnSearch').click()">
 	<input id="btnSearch" type="button" onclick="searchQuery()" value="Enter">
-	<div id=content></div>
+	<div id=content class="list-group"></div>
 </div>
 </body>
 </html>
