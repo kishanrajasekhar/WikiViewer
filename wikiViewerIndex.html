@@ -16,14 +16,18 @@
 		margin-left: 2%;
 		margin-right: 2%;
 	}
+	#btnRandom{
+		margin: 1%;
+	}
 	#btnSearch{
 		margin-bottom: 2%;
 	}
 </style>
 <div class="container-fluid text-center">
 	<h1>WikiViewer</h1>
+	<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><input id="btnRandom" type="button" value="Random Article"></a><br>
 	<input id="searchBox" type="text" placeholder="Search Box" onkeydown="if (event.keyCode == 13) document.getElementById('btnSearch').click()">
-	<input id="btnSearch" type="button" onclick="searchQuery()" value="Enter">
+	<input id="btnSearch" type="button" onclick="searchQuery()" value="Search">
 	<div id=content class="list-group"></div>
 </div>
 </body>
